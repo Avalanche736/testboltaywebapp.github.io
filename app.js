@@ -2,4 +2,5 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-alert(window.Telegram.WebApp);
+document.write('Текст на странице ');
+document.write(window.Telegram.WebApp);
