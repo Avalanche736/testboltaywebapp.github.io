@@ -2,5 +2,7 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-document.write('Текст на странице ');
-document.write(window.Telegram.WebApp);
+tg.sendData('тест')
+
+document.write('Тест метода sendData');
+
