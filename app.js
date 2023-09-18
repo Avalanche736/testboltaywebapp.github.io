@@ -34,28 +34,9 @@ xhr.onload = () => {
   }
 };
 
-// document.querySelectorAll('.category').forEach(elem => {
-//   elem.addEventListener('click', function() {
-//     console.log("fuck");
-//     document.querySelectorAll('.category').forEach(elem1 => {
-//       console.log("fuckkkkk");
-//       this.classList.remove('active_category');
-//     })
-//     this.classList.add('active_category');
-//   })
-// })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// console.log("fuck");
-// document.querySelectorAll('category').forEach(elem =>
-//   elem.addEventListener('click', function() {
-//     console.log("fuck");
-//     this.classList.toggle('active_category');
-//   }))
-
-/*document.querySelectorAll('.category').onclick = function() {
-  console.log("fuck");
-}*/
-
+// ПЕРЕКЛЮЧЕНИЕ КАТЕГОРИЙ
 document.querySelectorAll('.category').forEach(elem => { // К массиву элементов с селектором .button применяете метод forEach, в котором выполняется стрелочная функция, принимающая в качестве аргумента elem, который является элементом
   elem.addEventListener('click', _=> { // к элементу добавляете обработчик события click
     console.log("category switched");

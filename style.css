@@ -1,18 +1,52 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    color: var(--tg-theme-text-color);
-    background: var(--tg-theme-bg-color);
+/*body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    font-size: 18px;*/
+/*    color: var(--tg-theme-text-color);*/
+/*    background: var(--tg-theme-bg-color);*/
+/*}*/
+
+/* test */
+h3 {
+    padding: 20px;
+    line-height: 3;
+}
+/**/
+
+html {
+  scroll-behavior: smooth;
 }
 
-.catSTL.fixed {
+body {
+    flex: 1 0 auto;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+    direction: ltr;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    line-height: 1.4;
+    font-family: Arial;
+    font-weight: 400;
+    background: rgb(255, 255, 255);
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: no-common-ligatures;
+    text-size-adjust: 100%;
+}
+
+/*Меню категорий сверху*/
+
+a {
+    text-decoration: none;
+}
+
+.categories_style.fixed {
     position: fixed;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
 }
 
-.catSTL {
-    height: 56px;
+.categories_style {
+    height: 48px;
     width: 100%;
     overflow-x: auto;
     background: rgb(255, 255, 255);
@@ -25,8 +59,6 @@ body {
     transition: box-shadow 150ms ease 0s;
     user-select: none;
 }
-
-
 
 * {
     box-sizing: border-box;
@@ -61,6 +93,78 @@ body {
     flex: 0 0 auto;
 }
 
+/*Отображение блюд по категориям*/
+
+main {
+    display: block;
+}
+
+.products_style0 {
+    padding: 40px 0px 0px 0px;
+}
+/*.products_style1 {*/
+/*    padding: 0px 16px;*/
+/*}*/
+
+/*Заголовок с названием категории*/
+
+.products_section {
+    display: flex;
+    flex-flow: column;
+}
+
+section {
+    display: block;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+
+
+.section_header:first-child {
+    padding-top: 40px;
+}
+
+.section_header {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 24px 0px 8px;
+    position: relative;
+
+    /*content: " ";*/
+    /*display: block;*/
+    /*height: 1px;*/
+    /*width: 100%;*/
+    /*background-color: rgb(243, 243, 247);*/
+    /*position: absolute;*/
+    /*top: 0px;*/
+}
+
+/*.section_header:first-child::before {*/
+/*    display: none;*/
+/*}*/
+
+/*.section_header::before {*/
+/*    content: " ";*/
+/*    display: block;*/
+/*    height: 1px;*/
+/*    width: 100%;*/
+/*    background-color: rgb(243, 243, 247);*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*}*/
 
 
 
