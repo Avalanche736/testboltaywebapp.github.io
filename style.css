@@ -91,6 +91,7 @@ a {
     padding: 0px 10px;
     border-radius: 12px 6px 12px 6px;
     flex: 0 0 auto;
+    white-space: nowrap;
 }
 
 /*Отображение блюд по категориям*/
