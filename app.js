@@ -28,7 +28,7 @@ xhr.onload = () => {
       console.log(item);
 
       /* добавление элемента */
-      let parent_element = document.getElementById(item['category'])
+      let parent_element = document.getElementById("Deserty")
       let article_element = document.createElement("article");
       let picture_element = document.createElement("picture");
       let image_element = document.createElement("img");
