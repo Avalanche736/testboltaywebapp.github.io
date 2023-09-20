@@ -26,9 +26,44 @@ xhr.onload = () => {
   if (xhr.readyState == 4 && xhr.status == 200) {
     for(const item of xhr.response){
       console.log(item);
+
+      /* добавление элемента */
+      let parent_element = document.getElementById(item['category'])
+      let article_element = document.createElement("article");
+      let picture_element = document.createElement("picture");
+      let image_element = document.createElement("img");
+      let main_element = document.createElement("main");
+      let div_element = document.createElement("div");
+      let button_element = document.createElement("button");
+
+      div_element.classList.add("product_title")
+      let text = document.createTextNode(item['name']);
+      div_element.appendChild(text);
+
+      main_element.appendChild(div_element)
+      let product_description = document.createTextNode(item['description']);
+      main_element.appendChild(product_description);
+      main_element.classList.add("product_main")
+
+      /* TODO add button */
+
+      image_element.id = item['name'] + ".jpg";
+      image_element.className = "product_img";
+      image_element.src = "images/" + item['name'] + ".jpg";
+      picture_element.appendChild(image_element);
+      picture_element.classList.add("product_picture")
+
+      article_element.appendChild(picture_element)
+      article_element.appendChild(main_element)
+
+      article_element.classList.add("product_article")
+
+      parent_element.appendChild(article_element)
+
     }
     //console.log(xhr.response);
     //document.write(xhr.response['name'] + xhr.response['price']);
+
   } else {
     console.log(`Error: ${xhr.status}`);
   }
