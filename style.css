@@ -170,7 +170,7 @@ h2 {
     float: left;
     flex: 0 0 auto;
     position: relative;
-    margin: 0px 8px 0px 0px;
+    margin: 0px 0px 0px 0px;
     width: 135px;
     height: 135px;
     user-select: none;
@@ -180,7 +180,7 @@ h2 {
 }
 
 .product_main {
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .product_title {
@@ -196,25 +196,172 @@ h2 {
     padding: 16px 0px;
 }
 
+.btn {
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(253, 25, 15);
+    color: rgba(255, 255, 255);
+    border-radius: 12px 6px 12px 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
+    bottom: 0;
+    position: relative;
+    margin-top: 6px;
+}
 
+/* item fullscreen*/
 
+.product_img_fullscreen {
+    width: 100%;
+}
 
+.item_card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
 
-/*.section_header:first-child::before {*/
-/*    display: none;*/
-/*}*/
+.product_title_fullscreen {
+    margin: 8px 0 0 5%;
+    color: rgb(73, 51, 71);
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+}
 
-/*.section_header::before {*/
-/*    content: " ";*/
-/*    display: block;*/
-/*    height: 1px;*/
-/*    width: 100%;*/
-/*    background-color: rgb(243, 243, 247);*/
-/*    position: absolute;*/
-/*    top: 0px;*/
-/*}*/
+.product_weight_fullscreen {
+    margin: 6px 0 0 5%;
+    color: rgb(112, 92, 109);
+}
 
+.product_description_fullscreen {
+    margin: 5px 0 0 5%;
+    font-size: 15px;
+    color: rgb(70, 55, 64);
+}
 
+.product_additions_fullscreen {
+    margin: 5px 0 0 5%;
+    font-size: 15px;
+    color: rgb(70, 55, 64);
+}
+
+.additional_list_title {
+    color: rgb(73, 51, 71);
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+}
+.additionals_list {
+    margin: 10px 0 0 0;
+}
+
+.product_add_to_cart_error_fullscreen {
+    display: none;
+    margin: 5px 0 0 5%;
+    font-size: 15px;
+    color: rgba(176, 0, 0, 0.82);
+}
+
+.btn_fullscreen {
+    margin: 0 0 5% 5%;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(253, 25, 15);
+    color: rgba(255, 255, 255);
+    border-radius: 16px 8px 16px 8px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: background .2s linear;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+/*style="display: none; z-index: 1080; position: fixed; bottom: 20px; right: 20px; background: rgb(253, 25, 15); border-radius: 12px 6px 12px 6px; padding: 4px 8px 2px 8px;
+*/
+/*.btn_close_item_card_fullscreen {
+    !*box-shadow: rgb(253, 25, 15) 0px 0px 5px;*!
+    border-radius: 16px 8px 16px 8px;
+    width: 48px;
+    height: 24px;
+    position: sticky;
+    display: none;
+    z-index: 1001;
+    position: absolute;
+    top: 0px;
+    background: rgb(253, 25, 15);
+    margin-top: 8px;
+    margin-left: 8px;
+    !*opacity: .8;*!
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}*/
+
+.btn_close_item_card_fullscreen {
+    z-index: 1200;
+    display: none;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(253, 25, 15);
+    color: rgba(255, 255, 255);
+    border-radius: 12px 6px 12px 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.cart_fullscreen {
+    padding: 0px 16px;
+}
+
+.cart_fullscreen_items {
+    margin-top: 40px;
+}
+
+.cart_fullscreen_result {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    color: rgb(0, 0, 0);
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 20px;
+}
+
+.btn_cart_fullscreen {
+    margin: 0 0 5% 5%;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(253, 25, 15);
+    color: rgba(255, 255, 255);
+    border-radius: 16px 8px 16px 8px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: background .2s linear;
+    /*position: absolute;*/
+    bottom: 0;
+    left: 0;
+    width: 90%;
+}
 
 /*
 var(--tg-theme-bg-color)
