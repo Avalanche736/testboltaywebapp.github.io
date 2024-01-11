@@ -6,7 +6,7 @@ tg.expand();
 
 
 const Http = new XMLHttpRequest();
-const url = 'http://94.250.252.189:12345/';
+const url = 'http://94.250.252.189:12345';
 Http.open("GET", url);
 Http.send();
 
@@ -23,7 +23,7 @@ let food_items
 let additions_items
 let additions_lists_items
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "http://94.250.252.189:12345/getdata/");
+xhr.open("GET", "http://94.250.252.189:12345/getdata");
 xhr.send();
 xhr.responseType = "json";
 xhr.onload = () => {
