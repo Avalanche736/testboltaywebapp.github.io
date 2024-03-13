@@ -25,6 +25,7 @@ let additions_items
 let additions_lists_items
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "getdata");
+Http.setRequestHeader('ngrok-skip-browser-warning', 0);
 xhr.send();
 xhr.responseType = "json";
 xhr.onload = () => {
