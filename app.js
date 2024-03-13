@@ -8,6 +8,7 @@ tg.expand();
 const Http = new XMLHttpRequest();
 const url = 'https://fcc1-46-22-56-140.ngrok-free.app/';
 Http.open("GET", url);
+Http.setRequestHeader('ngrok-skip-browser-warning', 0);
 Http.send();
 
 Http.onload = () => {
