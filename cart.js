@@ -246,7 +246,7 @@ function hide_cart() {
 
 function order() {
 
-    tg.sendData("test cart again");
+    tg.sendData(cart);
 
     return true;
 }
