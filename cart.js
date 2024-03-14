@@ -245,5 +245,6 @@ function hide_cart() {
 }
 
 function order() {
-
+    tg.sendData("data test");
+    return true;
 }
