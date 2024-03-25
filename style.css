@@ -268,7 +268,7 @@ h2 {
 }
 
 .btn_fullscreen {
-    margin: 0 0 5% 5%;
+    margin: 5%;
     display: block;
     padding: 10px 20px;
     border: none;
@@ -278,8 +278,7 @@ h2 {
     font-weight: 500;
     font-size: 18px;
     transition: background .2s linear;
-    position: absolute;
-    bottom: 0;
+
     left: 0;
     width: 90%;
 }
