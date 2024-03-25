@@ -1,15 +1,3 @@
-/*function btn_fullscreen_listener(item_clicked) {
-    if (item_clicked['additional'] != 0) {
-        //if there are additional options, open item card
-        //TODO manage additionals
-        //clickProductTitleToOpenItemCard(item_clicked);
-        console.log('click');
-    } else {
-        //if there are no additional options, just add to cart
-        add_item_to_cart(item_clicked, 0);
-        increase_number_of_items_in_cart();
-    }
-}*/
 
 function clickProductTitleToOpenItemCard(item_clicked) {
     disableScroll();
@@ -199,16 +187,14 @@ function clickProductTitleToOpenItemCard(item_clicked) {
             }
         }
     }
+
     //add to cart button
     let btn_fullscreen = document.getElementsByClassName("btn_fullscreen")[0];
     btn_fullscreen.textContent = "Добавить в корзину за " + item_clicked['price'] + "₽";
     btn_fullscreen.addEventListener('click', _ => { // к элементу добавляете обработчик события click
+
         if (item_clicked['additional'] != 0) {
             //if there are additional options, open item card
-            //TODO manage additionals
-            //clickProductTitleToOpenItemCard(item_clicked);
-            console.log('additional_choice_info:');
-            console.log(additional_choice_info);
             for (const additional_ids of Object.keys(additional_choice_info)) {
                 if (additional_choice_info[additional_ids]['type'] == 0 && additional_choice_info[additional_ids]['choice'] == 0) {
                      //не был сделан требуемый выбор дополнения
@@ -226,6 +212,9 @@ function clickProductTitleToOpenItemCard(item_clicked) {
             add_item_to_cart(item_clicked, 0);
             increase_number_of_items_in_cart();
         }
+
+        //hide item card to prevent bugs connected with additions
+        hideItemCard();
     });
     //replace element horizontally
     let item_card_fullscreen = document.getElementsByClassName("item_card_fullscreen")[0];

@@ -41,6 +41,7 @@ function add_item_to_cart(item, additional) {
         }
         item_to_add['price'] += price_correction;
     }
+
     if (item_to_add['id'] in cart['items']) {
         console.log('in items')
         cart['items'][item_to_add['id']]['count']++;
@@ -121,8 +122,8 @@ function show_cart_item(item, cart_item, cart_item_key) {
     div_element.addEventListener('click', _ => { // к элементу добавляете обработчик события click
         clickProductTitleToOpenItemCard(item);
     })
-
     main_element.appendChild(div_element);
+
     if (cart_item['additional'] != 0) {
         let additions = "Дополнительно:\n";
         additions += '\n';
@@ -131,7 +132,7 @@ function show_cart_item(item, cart_item, cart_item_key) {
                 additions += choice['name'] + choice['weight'];
             }
         }
-        //console.log(additions);
+        console.log(additions);
         let product_description = document.createTextNode(additions);
 
         main_element.appendChild(product_description);
