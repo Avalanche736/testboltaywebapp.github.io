@@ -126,10 +126,10 @@ function show_cart_item(item, cart_item, cart_item_key) {
 
     if (cart_item['additional'] != 0) {
         let additions = "Дополнительно:\n";
-        additions += '\n';
+
         for (const addition_key of Object.keys(cart_item['additional'])) {
             for (const choice of cart_item['additional'][addition_key]['choice']) {
-                additions += choice['name'] + choice['weight'];
+                additions += "\n" + choice['name'] + " " + choice['weight'];
             }
         }
         console.log(additions);
