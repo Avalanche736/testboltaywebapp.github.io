@@ -29,6 +29,30 @@ function decrease_number_of_items_in_cart() {
 
 function add_item_to_cart(item, additional) {
     let item_to_add = { ...item };
+
+    let search_result;
+    let number_of_same_items = 0;
+    let cart_item_id_without_additions;
+    for (const cart_item_id in cart['items']) {
+        console.log('test cart item');
+        console.log(cart_item_id);
+        search_result = cart_item_id.search(' ');
+        if (search_result == -1) {
+            cart_item_id_without_additions = parseInt(cart_item_id);
+        } else {
+            cart_item_id_without_additions = parseInt(cart_item_id.substring(0, search_result));
+        }
+        if (item_to_add['id'] == cart_item_id_without_additions) {
+            number_of_same_items += cart['items'][cart_item_id]['count'];
+        }
+    }
+
+    if (number_of_same_items >= parseInt(item_to_add['in_stock'])) {
+        // выкинуть ошибку
+        console.log('in stock error');
+        return -1;
+    }
+
     if (additional != 0) {
         let price_correction = 0;
         for (const additional_ids of Object.keys(additional)) {
@@ -49,6 +73,7 @@ function add_item_to_cart(item, additional) {
     } else {
         cart['items'][item_to_add['id']] = {price: item_to_add['price'], count: 1, additional: additional}
     }
+    return 0;
 }
 
 function show_cart() {
@@ -182,6 +207,40 @@ function show_cart_item(item, cart_item, cart_item_key) {
     })
 
     edit_count_plus.addEventListener('click', _ => { // к элементу добавляете обработчик события click
+        let search_result;
+        let number_of_same_items = 0;
+        let cart_item_id_without_additions;
+
+        let cart_item_to_add_id_without_additions;
+        console.log(item);
+        search_result = item['id'].toString().search(' ');
+        if (search_result == -1) {
+            cart_item_to_add_id_without_additions = parseInt(item['id']);
+        } else {
+            cart_item_to_add_id_without_additions = parseInt(item['id'].toString().substring(0, search_result));
+        }
+
+        for (const cart_item_id in cart['items']) {
+            console.log('test cart item');
+            console.log(cart_item_id);
+            search_result = cart_item_id.search(' ');
+            if (search_result == -1) {
+                cart_item_id_without_additions = parseInt(cart_item_id);
+            } else {
+                cart_item_id_without_additions = parseInt(cart_item_id.substring(0, search_result));
+            }
+            if (cart_item_to_add_id_without_additions == cart_item_id_without_additions) {
+                number_of_same_items += cart['items'][cart_item_id]['count'];
+            }
+        }
+
+        if (number_of_same_items >= parseInt(item['in_stock'])) {
+            // выкинуть ошибку
+            // TODO добавить надпись о нехватки наличия
+            console.log('in stock error');
+            return -1;
+        }
+
         cart_item['count']++;
         increase_number_of_items_in_cart();
         show_cart_result();

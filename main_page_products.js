@@ -28,8 +28,11 @@ function copyItemToMainPageProductsList(item, category) {
             clickProductTitleToOpenItemCard(item);
         } else {
             //if there are no additional options, just add to cart
-            add_item_to_cart(item, 0);
-            increase_number_of_items_in_cart();
+            if (add_item_to_cart(item, 0) == -1) {
+                button_element.textContent = "В наличии " + item['in_stock'] + "шт";
+            } else {
+                increase_number_of_items_in_cart();
+            }
         }
     })
 

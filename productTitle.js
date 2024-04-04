@@ -205,8 +205,11 @@ function clickProductTitleToOpenItemCard(item_clicked) {
                 }
             }
 
-            add_item_to_cart(item_clicked, additional_choice_info);
-            increase_number_of_items_in_cart();
+            if (add_item_to_cart(item_clicked, additional_choice_info) == -1) {
+                btn_fullscreen.textContent = "В наличии " + item['in_stock'] + "шт";
+            } else {
+                increase_number_of_items_in_cart();
+            }
         } else {
             //if there are no additional options, just add to cart
             add_item_to_cart(item_clicked, 0);
