@@ -6,7 +6,7 @@ tg.expand();
 
 
 const Http = new XMLHttpRequest();
-const url = 'https://0546-94-250-252-189.ngrok-free.app/';
+const url = 'https://ab5d-94-250-252-189.ngrok-free.app/';
 Http.open("GET", url);
 Http.setRequestHeader('ngrok-skip-browser-warning', '0');
 Http.send();
