@@ -6,6 +6,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <link rel="stylesheet" href="style.css"> <title>Document</title>
+    <script src="productTitle.js"></script>
 </head>
 
 <body style="position: relative">
@@ -120,6 +121,36 @@
             <p>Итого:</p>
             <p class="cart_price_value"></p>
         </div>
+
+        <fieldset style="margin: 20px 0 20px 0;">
+          <legend>Способ доставки:</legend>
+
+          <div style="margin-bottom: 15px;">
+            <input type="radio" id="huey" name="drone" value="huey" checked onclick="cart['delivery'] = -2; document.getElementById('select_table').setAttribute('disabled', 'true'); document.getElementById('select_table').removeAttribute('size'); document.getElementById('select_table').value='0';"/>
+            <label for="huey">Доставка в кампусе <br>(введите адрес в боте)</label>
+          </div>
+
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey" onclick="cart['delivery'] = 0; document.getElementById('select_table').removeAttribute('disabled'); document.getElementById('select_table').setAttribute('size', '5');"/>
+            <label for="dewey">Принести к столику</label>
+          </div>
+
+          <select id="select_table" name="select_table" disabled style="margin-bottom: 15px;">
+              <!--Supplement an id here instead of using 'name'-->
+              <option value="0" selected disabled>Выберите номер столика</option>
+              <option value="-1">Заберу на кассе</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+          </select>
+
+        </fieldset>
+
         <button class="btn_cart_fullscreen" onclick="order()">Заказать</button>
 
     </div>
