@@ -53,5 +53,10 @@ function copyItemToMainPageProductsList(item, category) {
 
     article_element.classList.add("product_article");
 
-    parent_element.appendChild(article_element);
+    if (parent_element != null) {
+        parent_element.appendChild(article_element);
+    } else {
+        console.log('Problems with item');
+        console.log(item);
+    }
 }

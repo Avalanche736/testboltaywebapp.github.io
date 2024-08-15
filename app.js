@@ -34,7 +34,7 @@ xhr.onload = () => {
         additions_items = xhr.response['additions']
         additions_lists_items = xhr.response['additions_lists'];
         for (const item of food_items) {
-            console.log(item);
+            //console.log(item);
             if (item['in_stock'] < 1) {
                 continue;
             }
