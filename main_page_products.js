@@ -1,3 +1,12 @@
+function UrlExists(url)
+{
+    let http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
+}
+
+
 function copyItemToMainPageProductsList(item, category) {
     let parent_element = document.getElementById(category);
     let article_element = document.createElement("article");
@@ -42,6 +51,9 @@ function copyItemToMainPageProductsList(item, category) {
 
     image_element.className = "product_img";
     image_element.src = "images/" + item['id'] + ".jpg";
+    if (!UrlExists(image_element.src)) {
+        image_element.src = "images/" + item['id'] + ".png";
+    }
     image_element.addEventListener('click', _ => { // к элементу добавляете обработчик события click
         clickProductTitleToOpenItemCard(item);
     })
