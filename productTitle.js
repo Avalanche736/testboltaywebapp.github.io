@@ -9,9 +9,6 @@ function clickProductTitleToOpenItemCard(item_clicked) {
     // img
     let product_img_fullscreen = document.getElementsByClassName("product_img_fullscreen")[0];
     product_img_fullscreen.src = "images/" + item_clicked['id'] + ".jpg";
-    if (!UrlExists(product_img_fullscreen.src)) {
-        product_img_fullscreen.src = "images/" + item_clicked['id'] + ".png";
-    }
     //title
     let product_title_fullscreen = document.getElementsByClassName("product_title_fullscreen")[0];
     product_title_fullscreen.textContent = item_clicked['name'];
