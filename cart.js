@@ -1,6 +1,7 @@
 let cart = {
     'number_of_items': 0,
     'delivery': -2,
+    'pack_to_go': false,
     'items': {
 
     }
@@ -306,6 +307,12 @@ function hide_cart() {
 
     enableScroll();
 }
+
+function pack_to_go() {
+    cart['pack_to_go'] = !cart['pack_to_go'];
+    console.log(cart);
+}
+
 
 function order() {
     console.log(cart);
