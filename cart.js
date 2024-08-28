@@ -314,9 +314,30 @@ function pack_to_go() {
 }
 
 
+function delivery_selected() {
+    cart['delivery'] = -2;
+    document.getElementById('select_table').setAttribute('disabled', 'true');
+    document.getElementById('select_table').removeAttribute('size');
+    document.getElementById('select_table').value='0';
+
+    document.getElementById('pack').style.display = 'none';
+}
+
+
+function in_cafe_selected() {
+    cart['delivery'] = 0;
+    document.getElementById('select_table').removeAttribute('disabled');
+    document.getElementById('select_table').setAttribute('size', '5');
+
+    document.getElementById('pack').style.display = 'block';
+}
+
+
 function order() {
     console.log(cart);
-    if (cart['delivery'] != -2) {
+    if (cart['delivery'] == -2) {
+        cart['pack_to_go'] = false;
+    } else {
         if (document.getElementById('select_table').value == "0") {
             console.log('select table please');
             return 0;

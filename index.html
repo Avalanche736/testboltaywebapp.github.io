@@ -121,12 +121,12 @@
           <legend>Способ доставки:</legend>
 
           <div style="margin-bottom: 15px;">
-            <input type="radio" id="huey" name="drone" value="huey" checked onclick="cart['delivery'] = -2; document.getElementById('select_table').setAttribute('disabled', 'true'); document.getElementById('select_table').removeAttribute('size'); document.getElementById('select_table').value='0';"/>
+            <input type="radio" id="huey" name="drone" value="huey" checked onclick="delivery_selected()"/>
             <label for="huey">Доставка в кампусе <br>(введите адрес в боте)</label>
           </div>
 
           <div>
-            <input type="radio" id="dewey" name="drone" value="dewey" onclick="cart['delivery'] = 0; document.getElementById('select_table').removeAttribute('disabled'); document.getElementById('select_table').setAttribute('size', '5');"/>
+            <input type="radio" id="dewey" name="drone" value="dewey" onclick="in_cafe_selected()"/>
             <label for="dewey">Принести к столику</label>
           </div>
 
@@ -161,7 +161,7 @@
               <option value="25">25</option>
           </select>
 
-          <div>
+          <div id="pack" style="display: none;">
               <input type="checkbox" onclick="pack_to_go()">Упаковать с собой</input>
           </div>
         </fieldset>
