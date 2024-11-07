@@ -27,8 +27,6 @@ function decrease_number_of_items_in_cart() {
         }
         document.getElementsByClassName('number_of_items_in_cart')[0].textContent = cart['number_of_items'];
         console.log(cart);
-        document.getElementById('number_of_items_in_cart')[0].textContent = cart['number_of_items'];
-
     }
 }
 
@@ -201,6 +199,7 @@ function show_cart_item(item, cart_item, cart_item_key) {
             if (cart['items'].hasOwnProperty(cart_item_key)) {
                 delete cart['items'][cart_item_key];
                 article_element.remove();
+                console.log('check check minus')
             }
         }
         decrease_number_of_items_in_cart();
