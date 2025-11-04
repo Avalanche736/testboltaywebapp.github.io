@@ -6,7 +6,7 @@ tg.expand();
 
 
 const Http = new XMLHttpRequest();
-const url = 'https://07e47b317c80.ngrok-free.app/';
+const url = 'https://f1a13b65c751.ngrok-free.app/';
 Http.open("GET", url);
 Http.setRequestHeader('ngrok-skip-browser-warning', '0');
 Http.send();
@@ -63,4 +63,5 @@ document.querySelectorAll('.category').forEach(elem => { // К массиву э
         elem.classList.add("active_category");
     })
 })
+
 
